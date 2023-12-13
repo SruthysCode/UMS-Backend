@@ -1,0 +1,49 @@
+
+<%- include ('../layouts/header.ejs') -%>
+
+ <div class="text-center center-div container-fluid" id="login">
+
+    <div class="container w-25 border py-5">
+        <div class="title pb-5"> 
+
+            
+            <div class="container">
+                    
+            <h2 class="font-weight-bold">Login System</h2>
+            <span>Login for the Existing User</span>
+            <br><br>
+        
+            <% 
+            if(typeof message!=='undefined'){
+                %>
+                <h6 style="color: red;"><%=message %></h6><br>
+                <%
+
+            }
+            %>
+            <form action="/login" method="post">
+
+                <input type="string" name="email"   placeholder="Email">
+                <br>
+                <br>
+                <input type="password" required name="password" placeholder="Password">
+                <br>
+                <br>
+                <input type="submit" class="btn btn-success rounded-pill" value="Login">
+                <br>
+                <br>
+                
+                <h6>New User <a href="/register">Sign In</a></h6>
+            
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
+
+<%- include('../layouts/footer.ejs') -%>
+
+
+ 

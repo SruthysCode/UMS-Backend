@@ -1,0 +1,35 @@
+<%- include ('../layouts/header.ejs') -%>
+<div class="text-center center-div container-fluid w-80" id="login">
+    <h1>Edit User</h1>
+    <div class="text-left container w-25 border py-3">       
+        <form action="" method="post">
+            <label for="">Name :</label>
+
+            <input type="text" name="name"  required placeholder="Name" value="<%= user.name%>">
+        
+
+            <br>
+            <br>
+            <label for="">Mobile :</label>
+
+            <input type="text" name="mobile"  required placeholder="Mobile" value="<%= user.mobile%>">
+            <br>
+            <br>   
+            <label for="">Email :</label>
+
+            <input type="email" name="email"  required placeholder="Email" value="<%= user.email%>">
+            <br>
+            <br>
+            <input type="hidden" name="id" value="<%=user._id%>">
+            <input type="submit" class="btn btn-success" value="Update User ">
+            <br>
+            <br>
+            
+        </form>
+        <div class="text-right">
+            <a href="/admin/dashboard">Go to Dashboard</a>
+        </div>
+    </div>
+</div>    
+
+<%- include('../layouts/footer.ejs') -%>

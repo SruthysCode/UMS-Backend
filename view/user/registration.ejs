@@ -1,0 +1,39 @@
+<%- include('../layouts/header.ejs') -%>
+
+<div class="text-center center-div container-fluid" id="login">
+
+    <div class="container w-25 border ">
+
+        <div class="container" style="padding:50px;">
+            <h1> Registration </h1><br>
+            <form action="" method="post" >
+                
+                
+                <input type="text" name="name" id="name" placeholder="Name" required>
+                <br><br>
+                <input type="text" name="email" id="email" placeholder="Email" required>
+                <br><br>
+                <input type="text" name="mobile" id="mobile" placeholder="Mobile" required>
+                <br><br>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <br><br>
+        
+                <input type="submit"  class="btn btn-success btn-block btn-lg gradient-custom-2 text-body" value="Register">
+            </form>
+            <%
+            if(typeof message!=='undefined')
+            {
+                %>
+                <p style="color: green">
+                    <%= message %>
+
+                </p>
+                <%
+            }
+            %>
+        </div>
+    </div>
+</div>       
+
+<%- include('../layouts/footer.ejs') -%>
+

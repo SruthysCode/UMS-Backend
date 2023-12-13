@@ -1,0 +1,68 @@
+<%- include('../layouts/header.ejs') -%>
+
+<div class="text-center p-5">
+
+    <h1>Dashboard</h1>
+
+    <a href="/admin/home">Go to Home</a>
+    <a href="/admin/new-user">Add New User</a>
+    
+
+</div>
+
+<div class="center-dash container-fluid" id="login">
+    <div class="container w-26 border py-3">        
+
+        <form action="">
+            <input type="text" placeholder="Search Name or Email" name="search">
+            <input type="submit" class="btn btn-success" value="Search"> 
+        </form>
+        <br><br>
+         <div class="center">
+            <table width="50%" class="table center margin-left: auto;margin-right: auto;">
+
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Actions</th>
+                </tr>
+                <%
+                    if(users.length>0)
+                    {
+                        for(let i=0; i<users.length;++i)
+                        {%>
+                        <tr>
+                            <td><%= users[i].name %> </td>
+                        
+                            <td><%= users[i].email%> </td>
+                        
+                            <td><%= users[i].mobile%> </td>
+                            <td>
+                                <a href="/admin/edit-user?id=<%=users[i]._id%>">Edit</a>
+                                <a href="/admin/delete-user?id=<%=users[i]._id%>">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        <%    
+                        }
+
+                    }
+                    else
+                    {
+                        %>
+                        <tr>
+                            <td>                                
+                            </td>
+                        </tr>
+                        <%
+                    }
+                %>
+            </table>
+        </div>
+
+    </div>
+
+</div>    
+<%- include('../layouts/footer.ejs') -%>
